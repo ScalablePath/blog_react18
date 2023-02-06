@@ -18,7 +18,7 @@ function AutoBatchedComponent() {
 
   return (
     <div>
-      <button onClick={handleClick}>Add</button>
+      <button onClick={handleClick}>+1</button>
       <p>
         {count} is {isEven ? "even" : "odd"}
       </p>

@@ -13,3 +13,23 @@ th{
 td{
   text-align: left;
 }
+.loader-sm {
+  width:20px;
+  height:20px;
+}
+.loader-lg {
+  width:50px;
+  height:50px;
+}
+.search-bar{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.results-panel{
+  height:30vh;
+  overflow: auto;
+  border:1px solid #333;
+  width:60vw;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ListUniversities from "./ListUniversities";
+import Spinner from "./Spinner";
 
 const AsyncComponent = () => {
   // eslint-disable-next-line no-unused-vars
@@ -25,7 +26,7 @@ const AsyncComponent = () => {
   return (
     <>
       {loading ? (
-        <p>Loading please wait...</p>
+        <Spinner className="loader-lg" />
       ) : (
         <ListUniversities list={data} />
       )}

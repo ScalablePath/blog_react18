@@ -2,15 +2,21 @@ import React, { Suspense } from "react";
 import "./App.css";
 import AsyncComponent from "./components/AsyncSuspendableComponent";
 import AutoBatchedComponent from "./components/AutoBatchedComponent";
+import TransitionComponent from "./components/TransitionComponent";
+import Spinner from "./components/Spinner";
 function App() {
   return (
     <div className="App">
-      <h2>Even Odd Counter</h2>
+      <h1>AutoBatching example: Even Odd Counter</h1>
       <AutoBatchedComponent />
-      <h2>List of American Universities</h2>
-      <Suspense fallback={<p>Loading, please wait...</p>}>
-        <AsyncComponent />
+      <h1>Suspense Example: Full List of American Universities</h1>
+      <Suspense fallback={<Spinner className="loader-lg" />}>
+        <div className="results-panel">
+          <AsyncComponent />
+        </div>
       </Suspense>
+      <h1>Transition example: Search American universities</h1>
+      <TransitionComponent />
     </div>
   );
 }
