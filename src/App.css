@@ -28,7 +28,7 @@ td{
   align-items: center;
 }
 .results-panel{
-  height:30vh;
+  height:25vh;
   overflow: auto;
   border:1px solid #333;
   width:60vw;

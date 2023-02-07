@@ -24,6 +24,7 @@ const TransitionComponent = () => {
         setResults([]);
       }
     } catch (e) {
+      setBusy(false);
       console.log(e);
       setResults([]);
     }
@@ -37,6 +38,7 @@ const TransitionComponent = () => {
         searchUniversities(query, controller).then();
       });
     } else {
+      setBusy(false);
       setResults([]);
     }
     return () => {
