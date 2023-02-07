@@ -3,7 +3,7 @@ import axios from "axios";
 import ListUniversities from "./ListUniversities";
 import Spinner from "./Spinner";
 const TransitionComponent = () => {
-  const [notUsed, startTransition] = useTransition();
+  const startTransition = useTransition()[1];
   const [query, setQuery] = useState("");
   const [busy, setBusy] = useState(false);
   const [results, setResults] = useState([]);
