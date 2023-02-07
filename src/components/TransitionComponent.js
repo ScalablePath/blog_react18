@@ -32,8 +32,9 @@ const TransitionComponent = () => {
     const controller = new AbortController();
     if (query) {
       setBusy(true);
+      // eslint-disable-next-line
       startTransition(() => {
-        searchUniversities(query, controller);
+        searchUniversities(query, controller).then();
       });
     } else {
       setResults([]);
@@ -41,6 +42,7 @@ const TransitionComponent = () => {
     return () => {
       controller.abort();
     };
+    // eslint-disable-next-line
   }, [query]);
   return (
     <div>
@@ -65,7 +67,9 @@ const TransitionComponent = () => {
             : `Type in your search`}
         </h3>
         {busy || results.length === 0 ? null : (
-          <ListUniversities list={results} />
+          <div className="results-panel">
+            <ListUniversities list={results} />
+          </div>
         )}
       </div>
     </div>
