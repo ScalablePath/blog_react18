@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 
 /**
  * A demo of auto batching, inspired by the code written by Dan Gaearon
@@ -7,6 +8,7 @@ import React, { useState } from "react";
  * @constructor
  */
 function AutoBatchedComponent() {
+  const [autoBatching, setAutoBatching] = useState(true);
   const [count, setCount] = useState(0);
   const [isEven, setIsEven] = useState(false);
 
@@ -15,11 +17,26 @@ function AutoBatchedComponent() {
     setIsEven((count + 1) % 2 === 0); // Does not trigger a re-render yet
     // React will now do one render for 2 state changes
   }
+  function handleClickWithFlush() {
+    flushSync(() => {
+      setCount((c) => c + 1);
+    });
+    setIsEven((count + 1) % 2 === 0);
+  }
+  useEffect(() => {
+    console.log("rendering auto-batched component");
+  });
 
   return (
     <div>
-      <button onClick={handleClick}>+1</button>
       <p>
+        AutoBatching is {autoBatching ? "ON" : "OFF"}{" "}
+        <button onClick={() => setAutoBatching(!autoBatching)}>toggle</button>{" "}
+      </p>
+      <button onClick={autoBatching ? handleClick : handleClickWithFlush}>
+        +1
+      </button>
+      <p className="even-odd">
         {count} is {isEven ? "even" : "odd"}
       </p>
     </div>

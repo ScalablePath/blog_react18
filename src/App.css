@@ -70,7 +70,7 @@ td{
 button{
   margin-right:10px;
 }
-.rendering{
-  color:#336699;
-
+.rendering, .even-odd{
+  color:#0a0;
+  text-transform: uppercase;
 }
