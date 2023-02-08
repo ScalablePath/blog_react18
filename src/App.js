@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import "./App.css";
 import AsyncComponent from "./components/AsyncSuspendableComponent";
 import AutoBatchedComponent from "./components/AutoBatchedComponent";
-import TransitionComponent from "./components/TransitionComponent";
+import Transition from "./components/Transitions/Transition";
 import Spinner from "./components/Spinner";
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
           <AsyncComponent />
         </div>
       </Suspense>
-      <h1>Transition example: Search American universities</h1>
-      <TransitionComponent />
+      <h1>Transition example: Rendering grids of different sizes</h1>
+      <Transition />
     </div>
   );
 }
