@@ -18,9 +18,11 @@ function AutoBatchedComponent() {
     // React will now do one render for 2 state changes
   }
   function handleClickWithFlush() {
+    // will force a render
     flushSync(() => {
       setCount((c) => c + 1);
     });
+    // will cause another render
     setIsEven((count + 1) % 2 === 0);
   }
   useEffect(() => {
