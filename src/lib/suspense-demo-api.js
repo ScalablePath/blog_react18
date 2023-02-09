@@ -39,11 +39,11 @@ const wrapPromise = (promise) => {
   };
 };
 
-export const fetchData = (url) => {
+export const fetchData = () => {
   return {
-    list: wrapPromise(
+    data: wrapPromise(
       axios
-        .get(url)
+        .get("http://universities.hipolabs.com/search?country=United+States")
         .then((res) => res.data)
         .catch((err) => console.log(err))
     ),
