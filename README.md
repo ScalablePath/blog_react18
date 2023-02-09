@@ -10,3 +10,6 @@ followed by
 ```shell
 npm start
 ```
+## Acknowledgements
+- Marvel ken : https://blog.openreplay.com/data-fetching-with-suspense-in-react/
+- Hipo, for the use of the public list of universities API http://universities.hipolabs.com/search?country=United+States
