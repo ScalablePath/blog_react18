@@ -15,6 +15,7 @@ function App() {
       </p>
       <AutoBatchedComponent />
       <h1>Suspense Example: Full List of American Universities</h1>
+      <p>The API called here is quite slow to really illustrate the point</p>
       <Suspense fallback={<Spinner className="loader-lg" />}>
         <div className="results-panel">
           <AsyncComponent />
