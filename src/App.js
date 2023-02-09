@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import "./App.css";
-import AsyncComponent from "./components/AsyncSuspendableComponent";
+import AsyncComponent from "./components/Suspense/AsyncSuspendableComponent";
 import AutoBatchedComponent from "./components/AutoBatchedComponent";
 import Transition from "./components/Transitions/Transition";
 import Spinner from "./components/Spinner";

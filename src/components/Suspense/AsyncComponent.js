@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ListUniversities from "./ListUniversities";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 
 const AsyncComponent = () => {
   // eslint-disable-next-line no-unused-vars
