@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import "./App.css";
-import AsyncComponent from "./components/Suspense/AsyncSuspendableComponent";
+import AsyncComponent from "./components/Suspense/AsyncComponent";
+import AsyncSuspendableComponent from "./components/Suspense/AsyncSuspendableComponent";
 import AutoBatchedComponent from "./components/AutoBatchedComponent";
 import Transition from "./components/Transitions/Transition";
 import Spinner from "./components/Spinner";
@@ -14,11 +15,15 @@ function App() {
         you will see two renders.
       </p>
       <AutoBatchedComponent />
+      {/* uncomment this block to see the original non <Suspense> example in action
+        <h1>List of American Universities</h1>
+        <AsyncComponent />
+        */}
       <h1>Suspense Example: Full List of American Universities</h1>
       <p>The API called here is quite slow to really illustrate the point</p>
       <Suspense fallback={<Spinner className="loader-lg" />}>
         <div className="results-panel">
-          <AsyncComponent />
+          <AsyncSuspendableComponent />
         </div>
       </Suspense>
       <h1>Transition example: Rendering grids of different sizes</h1>
